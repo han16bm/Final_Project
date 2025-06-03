@@ -152,7 +152,7 @@ function UserPhotos() {
       {photos.map((photo) => (
         <div key={photo._id} className="photo-card">
           <img
-            src={`http://localhost:8081/images/${photo.file_name}`}
+            src={`https://4r7v9z-8081.csb.app/images/${photo.file_name}`}
             alt=""
             className="photo-image"
           />
