@@ -5,6 +5,7 @@ import {useForm} from "react-hook-form";
 import './styles.css';
 
 //toitenla
+//longcu
 function LoginRegister({setTrigger}){
     const [tab, setTab] = useState("login");
     const [password, setPassword] = useState("");
