@@ -4,11 +4,6 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {useForm} from "react-hook-form";
 import './styles.css';
 
-//toitenla
-//longcu
-//abc
-//deg
-//aaaaaaa
 function LoginRegister({setTrigger}){
     const [tab, setTab] = useState("login");
     const [password, setPassword] = useState("");
