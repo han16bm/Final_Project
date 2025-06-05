@@ -6,6 +6,7 @@ import './styles.css';
 
 //toitenla
 //longcu
+//abc
 function LoginRegister({setTrigger}){
     const [tab, setTab] = useState("login");
     const [password, setPassword] = useState("");
