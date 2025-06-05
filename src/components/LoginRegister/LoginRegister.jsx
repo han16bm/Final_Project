@@ -8,6 +8,7 @@ import './styles.css';
 //longcu
 //abc
 //deg
+//aaaaaaa
 function LoginRegister({setTrigger}){
     const [tab, setTab] = useState("login");
     const [password, setPassword] = useState("");
