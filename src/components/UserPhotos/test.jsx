@@ -237,3 +237,8 @@ export default EditUser;
   cursor: pointer;
 }
 */
+
+
+// thêm vào app.js ở fe
+//import EditUser from "./components/EditUser/EditUser";
+//<Route path="/edit-info" element={<EditUser />} />
