@@ -19,6 +19,22 @@ function UserPhotos() {
   const user_id = localStorage.getItem("user_id");
   const nav = useNavigate();
 
+  const [editing, setEditing] = useState(null);
+  const [editText, setEditText] = useState("");
+
+const handleUpdate = async (photoId, commentId) => {
+  const token = localStorage.getItem("token");
+  await fetch(`http://localhost:8081/api/photo/${photoId}/comment/${commentId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify({ newComment: editText })
+  });
+  setEditing(null);
+  setTrigger((pre) => !pre);
+};
   //Fetch photos of the user
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -174,7 +190,18 @@ function UserPhotos() {
                     at {formatDate(comment.date_time)}:
                   </p>
                   <p className="photo-comment-text">{comment.comment}</p>
-
+{user_id === comment.user_id && (
+                  <button onClick={() => setEditing(comment._id)}>Edit</button>
+                  )}
+                  {editing === comment._id && (
+                  <div>
+                  <input
+                  value={editText}
+                  onChange={(e) => setEditText(e.target.value)}
+                  />
+                  <button onClick={() => handleUpdate(photo._id,comment._id)}>Save</button>
+                  </div>
+                  )}
                 </div>
               );
             })}
