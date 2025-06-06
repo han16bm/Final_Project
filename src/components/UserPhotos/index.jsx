@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Typography, Divider } from "@mui/material";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import './styles.css';
-
+// toi ten la
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleString();
 }
